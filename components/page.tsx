@@ -17,6 +17,7 @@ const commandCategories = {
     { name: '?love', description: 'Check love compatibility between two users', usage: '?love [user1] [user2]' },
     { name: '?merp', description: 'Get a random merp streamable link', usage: '?merp' },
     { name: '?sigma', description: 'Get a random sigma quote', usage: '?sigma' },
+    { name: '?yourmom', description: 'Get a random your mom joke', usage: '?yourmom' },
   ],
   "Music Commands": [
     { name: '?lastfm set', description: 'Set your Last.fm username', usage: '?lastfm set [username]' },
