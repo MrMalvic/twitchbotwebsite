@@ -42,6 +42,7 @@ export default function RootLayout({
             } catch (_) {}
           `,
         }} />
+        <link rel="icon" href="/3.png"></link>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider defaultTheme="dark">
