@@ -77,7 +77,7 @@ export function BlockPage() {
             <Input
               type="search"
               placeholder="Search commands..."
-              className="w-full"
+              className="w-full bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 border border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
