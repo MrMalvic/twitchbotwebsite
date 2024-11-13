@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 // Mock data for commands
 const commandList = [
@@ -56,19 +57,22 @@ export function BlockPage() {
   ) 
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
       <header className="bg-white dark:bg-gray-800 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Input
-            type="search"
-            placeholder="Search commands..."
-            className="w-full"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <div className="flex items-center gap-4">
+            <Input
+              type="search"
+              placeholder="Search commands..."
+              className="w-full"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <ThemeToggle />
+          </div>
         </div>
       </header>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">MrsMalvic Commands</h1>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredCommands.map((command) => (
@@ -91,6 +95,10 @@ export function BlockPage() {
           </p>
         )}
       </main>
+
+      <footer className="py-6 text-center text-sm text-gray-600 dark:text-gray-400">
+        Made with ❤️ by <a href="https://www.twitch.tv/mrmalvic" target="_blank" rel="noopener noreferrer" className="hover:underline">MrMalvic</a>
+      </footer>
     </div>
   )
 }
