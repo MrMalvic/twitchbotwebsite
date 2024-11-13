@@ -8,7 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 // Organize commands by category
 const commandCategories = {
   "Fun Commands": [
-    { name: '?ask', description: 'Ask a question and get an AI response', usage: '?ask [question]' },
+    { name: '?ask', description: 'Ask a question and get an AI response (Aliases: ?gpt)', usage: '?ask [question]' },
     { name: '?catfact', description: 'Get a random cat fact', usage: '?catfact' },
     { name: '?cookie', description: 'Get your daily fortune cookie', usage: '?cookie' },
     { name: '?dadjoke', description: 'Get a random dad joke', usage: '?dadjoke' },
@@ -21,14 +21,15 @@ const commandCategories = {
   ],
   "Music Commands": [
     { name: '?lastfm set', description: 'Set your Last.fm username', usage: '?lastfm set [username]' },
-    { name: '?ms', description: 'Show your current playing song on Last.fm', usage: '?ms [emote]' },
+    { name: '?mysong', description: 'Show your current playing song on Last.fm (Aliases: ?ms)', usage: '?mysong' },
     { name: '?song', description: "Check another user's currently playing song", usage: '?song [username]' },
-    { name: '?ta', description: 'Show top 5 artists from Last.fm', usage: '?ta [username]' },
-    { name: '?ts', description: 'Show top 5 songs from Last.fm', usage: '?ts [username]' },
+    { name: '?topartists', description: 'Show top 5 artists from Last.fm (Aliases: ?ta)', usage: '?topartists' },
+    { name: '?topsongs', description: 'Show top 5 songs from Last.fm (Aliases: ?ts)', usage: '?topsongs' },
   ],
   "Info Commands": [
+    { name: '?game', description: 'Get information about a game', usage: '?game [game]' },
     { name: '?define', description: 'Get the definition of a word', usage: '?define [word]' },
-    { name: '?fa', description: 'Check follow age of a user', usage: '?fa [username] [channel]' },
+    { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
     { name: '?movie', description: 'Get information about a movie', usage: '?movie [title]' },
     { name: '?news', description: 'Get latest news', usage: '?news [query]' },
@@ -40,8 +41,8 @@ const commandCategories = {
   "Chat Commands": [
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?gaming, ?gn/?sleep, ?poop)', usage: '?afk [message]' },
-    { name: '?rl', description: 'Get a random message from a user', usage: '?rl [username] [channel]' },
-    { name: '?rq', description: 'Get a random message from chat', usage: '?rq [channel]' },
+    { name: '?randomline', description: 'Get a random message from a user (Aliases: ?rl)', usage: '?randomline [username] [channel]' },
+    { name: '?randomquote', description: 'Get a random message from chat (Aliases: ?rq)', usage: '?randomquote [channel]' },
     { name: '?subage', description: 'Check subscription length', usage: '?subage [username] [channel]' },
     { name: '?user', description: 'Get Twitch user information', usage: '?user [username]' },
   ],
