@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ChevronDown } from "lucide-react"
 
 // Organize commands by category
 const commandCategories = {
@@ -64,7 +65,26 @@ const commandCategories = {
 
 export function BlockPage() {
   const [searchTerm, setSearchTerm] = useState('')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
+  // Create refs for each category section
+  const categoryRefs = {
+    "Fun Commands": useRef<HTMLDivElement>(null),
+    "Music Commands": useRef<HTMLDivElement>(null),
+    "Info Commands": useRef<HTMLDivElement>(null),
+    "Chat Commands": useRef<HTMLDivElement>(null),
+    "System Commands": useRef<HTMLDivElement>(null),
+  }
 
+  const scrollToCategory = (category: keyof typeof categoryRefs) => {
+    categoryRefs[category]?.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    })
+    setIsMenuOpen(false)
+  }
+
+  // Rest of your filtering logic remains the same
   const filteredCategories = Object.entries(commandCategories).reduce((acc, [category, commands]) => {
     const filteredCommands = commands.filter(command =>
       command.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -78,7 +98,7 @@ export function BlockPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
-      <header className="bg-white dark:bg-gray-800 shadow-md">
+      <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
             <img 
@@ -86,6 +106,32 @@ export function BlockPage() {
               alt="Website Logo" 
               className="h-8 w-8"
             />
+            
+            <div className="relative">
+              <button
+                className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
+              >
+                Categories
+                <ChevronDown className={`w-4 h-4 transition-transform ${isMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isMenuOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                  {Object.keys(commandCategories).map((category) => (
+                    <button
+                      key={category}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      onClick={() => scrollToCategory(category as keyof typeof categoryRefs)}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Input
               type="search"
               placeholder="Search commands..."
@@ -97,10 +143,10 @@ export function BlockPage() {
           </div>
         </div>
       </header>
+
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
         {Object.entries(filteredCategories).map(([category, commands]) => (
-          <div key={category} className="mb-8">
+          <div key={category} ref={categoryRefs[category as keyof typeof categoryRefs]} className="mb-8 scroll-mt-24">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">{category}</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {commands.map((command) => (
