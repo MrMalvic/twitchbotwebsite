@@ -33,7 +33,6 @@ const commandCategories = {
   "Info Commands": [
     { name: '?game', description: 'Get information about a game', usage: '?game [game]' },
     { name: '?define', description: 'Get the definition of a word', usage: '?define [word]' },
-    { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
     { name: '?founders', description: 'Check founders of a channel', usage: '?founders [channel]' },
     { name: '?horoscope', description: 'Get your horoscope', usage: '?horoscope [sign]' },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
@@ -48,6 +47,7 @@ const commandCategories = {
   "Chat Commands": [
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?gaming, ?gn/?sleep, ?poop)', usage: '?afk [message]' },
+    { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
     { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]' },
     { name: '?randomclip', description: 'Get a random clip from a channel', usage: '?randomclip [channel]' },
     { name: '?randomline', description: 'Get a random message from a user (Aliases: ?rl)', usage: '?randomline [username] [channel]' },
