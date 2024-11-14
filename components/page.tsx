@@ -15,7 +15,7 @@ const commandCategories = {
     { name: '?dadjoke', description: 'Get a random dad joke', usage: '?dadjoke' },
     { name: '?dogfact', description: 'Get a random dog fact', usage: '?dogfact' },
     { name: '?gay', description: 'Check how gay someone is', usage: '?gay [username]' },
-    { name: '?imagine', description: 'Generate an image with AI', usage: '?imagine [prompt]' },
+    { name: '?imagine', description: 'Generate an image with AI (Aliases: ?img)', usage: '?imagine [prompt]' },
     { name: '?love', description: 'Check love compatibility between two users', usage: '?love [user1] [user2]' },
     { name: '?merp', description: 'Get a random merp streamable link', usage: '?merp' },
     { name: '?pyramid', description: 'Make a pyramid', usage: '?pyramid [text]' },
