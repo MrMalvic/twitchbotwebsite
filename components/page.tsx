@@ -29,6 +29,7 @@ const commandCategories = {
     { name: '?lastfm set', description: 'Set your Last.fm username', usage: '?lastfm set [username]' },
     { name: '?mysong', description: 'Show your current playing song on Last.fm (Aliases: ?ms)', usage: '?mysong' },
     { name: '?song', description: "Check another user's currently playing song", usage: '?song [username]' },
+    { name: '?songhistory', description: 'Show a user\'s recently played songs', usage: '?songhistory [username]' },
     { name: '?topartists', description: 'Show top 5 artists from Last.fm (Aliases: ?ta)', usage: '?topartists' },
     { name: '?topsongs', description: 'Show top 5 songs from Last.fm (Aliases: ?ts)', usage: '?topsongs' },
   ],
