@@ -46,7 +46,7 @@ const commandCategories = {
     { name: '?profilepicture', description: 'Get a user\'s profile picture (Aliases: ?pfp)', usage: '?profilepicture [username]' },
     { name: '?time', description: 'Check time in a location', usage: '?time [location]' },
     { name: '?urban', description: 'Look up a term on Urban Dictionary', usage: '?urban [term] [index:n]' },
-    { name: '?weather', description: 'Get weather information, You can also set your location with ?weather set [location]. you can also add "hidden" at the end to hide the location from the output', usage: '?weather [location] [hidden]' },
+    { name: '?weather', description: 'Get weather information, You can also set your location with ?weather set [location]. you can also add "hidden" at the end to hide the location from the output', usage: '?weather [location]' },
     { name: '?wolfram', description: 'Query Wolfram Alpha', usage: '?wolfram [query]' },
   ],
   "Chat Commands": [
