@@ -51,7 +51,7 @@ const commandCategories = {
   ],
   "Chat Commands": [
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
-    { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?gaming, ?gn/?sleep, ?poop)', usage: '?afk [message]' },
+    { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?poop)', usage: '?afk [message]' },
     { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
     { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]' },
     { name: '?randomclip', description: 'Get a random clip from a channel', usage: '?randomclip [channel]' },
