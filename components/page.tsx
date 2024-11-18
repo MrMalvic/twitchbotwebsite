@@ -16,6 +16,7 @@ const commandCategories = {
     { name: '?dadjoke', description: 'Get a random dad joke', usage: '?dadjoke' },
     { name: '?dogfact', description: 'Get a random dog fact', usage: '?dogfact' },
     { name: '?gay', description: 'Check how gay someone is', usage: '?gay [username]' },
+    { name: '?gif', description: 'Get a random gif', usage: '?gif [query]' },
     { name: '?hi', description: 'Greet a random user in chat', usage: '?hi' },
     { name: '?imagine', description: 'Generate an image with AI (Aliases: ?img)', usage: '?imagine [prompt]' },
     { name: '?love', description: 'Check love compatibility between two users', usage: '?love [user1] [user2]' },
@@ -59,6 +60,7 @@ const commandCategories = {
     { name: '?randomquote', description: 'Get a random message from chat (Aliases: ?rq)', usage: '?randomquote [channel]' },
     { name: '?subage', description: 'Check subscription length', usage: '?subage [username] [channel]' },
     { name: '?user', description: 'Get Twitch user information', usage: '?user [username]' },
+    { name: '?whatemoteisit', description: 'Get information about an emote (Aliases: ?weit)', usage: '?whatemoteisit [emote]' },
   ],
   "System Commands": [
     { name: '?ping', description: 'Check bot status and response time', usage: '?ping' },
