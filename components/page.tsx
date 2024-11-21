@@ -9,6 +9,7 @@ import { ChevronDown } from "lucide-react"
 // Organize commands by category
 const commandCategories = {
   "Fun Commands": [
+    { name: '?8ball', description: 'Ask the magic 8ball a question', usage: '?8ball [question]' },
     { name: '?ask', description: 'Ask a question and get an AI response (Aliases: ?gpt)', usage: '?ask [question]' },
     { name: '?catfact', description: 'Get a random cat fact', usage: '?catfact' },
     { name: '?coinflip', description: 'Flip a coin (Aliases: ?cf)', usage: '?coinflip' },
@@ -39,7 +40,7 @@ const commandCategories = {
     { name: '?define', description: 'Get the definition of a word', usage: '?define [word]' },
     { name: '?founders', description: 'Check founders of a channel', usage: '?founders [channel]' },
     { name: '?horoscope', description: 'Get your horoscope', usage: '?horoscope [sign]' },
-    { name: '?isbanned', description: 'Check if a user is banned from twitch and if so, get the reason', usage: '?isbanned [username]' },
+    { name: '?isbanned', description: 'Check if a user is banned from twitch and if so, get the reason (Aliases: ?bancheck, ?bc)', usage: '?isbanned [username]' },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
     { name: '?isstaff', description: 'Check if a user is a twitch staff member', usage: '?isstaff [username]' },
     { name: '?movie', description: 'Get information about a movie', usage: '?movie [title]' },
@@ -51,6 +52,7 @@ const commandCategories = {
     { name: '?wolfram', description: 'Query Wolfram Alpha', usage: '?wolfram [query]' },
   ],
   "Chat Commands": [
+    { name: '?7tva', description: 'Shows the age of a 7TV account', usage: '?7tva [username]' },
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
     { name: '?check', description: 'Check a user\'s afk status', usage: '?check [username]' },
