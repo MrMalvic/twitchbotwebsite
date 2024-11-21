@@ -108,38 +108,48 @@ export function BlockPage() {
     <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-4">
-            <img 
-              src="/3.png" 
-              alt="Website Logo" 
-              className="h-8 w-8"
-            />
-            
-            <div className="relative">
-              <button
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
-              >
-                Categories
-                <ChevronDown className={`w-4 h-4 transition-transform ${isMenuOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isMenuOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
-                  {Object.keys(commandCategories).map((category) => (
-                    <button
-                      key={category}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      onClick={() => scrollToCategory(category as keyof typeof categoryRefs)}
-                    >
-                      {category}
-                    </button>
-                  ))}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <img 
+                  src="/3.png" 
+                  alt="Website Logo" 
+                  className="h-8 w-8"
+                />
+                <div className="relative">
+                  <button
+                    className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
+                  >
+                    Categories
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {isMenuOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                      {Object.keys(commandCategories).map((category) => (
+                        <button
+                          key={category}
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          onClick={() => scrollToCategory(category as keyof typeof categoryRefs)}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+                <a
+                  href="/add-to-channel"
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+                >
+                  Add to Channel
+                </a>
+              </div>
+              <ThemeToggle />
             </div>
-
+            
             <Input
               type="search"
               placeholder="Search commands..."
@@ -147,14 +157,13 @@ export function BlockPage() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <ThemeToggle />
           </div>
         </div>
       </header>
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {Object.entries(filteredCategories).map(([category, commands]) => (
-          <div key={category} ref={categoryRefs[category as keyof typeof categoryRefs]} className="mb-8 scroll-mt-24">
+          <div key={category} ref={categoryRefs[category as keyof typeof categoryRefs]} className="mb-8 scroll-mt-32">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">{category}</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {commands.map((command) => (
