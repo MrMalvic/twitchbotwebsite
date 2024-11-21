@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ChevronDown } from "lucide-react"
+import Image from 'next/image'
 
 // Organize commands by category
 const commandCategories = {
@@ -111,9 +112,11 @@ export function BlockPage() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <img 
+                <Image 
                   src="/3.png" 
                   alt="Website Logo" 
+                  width={32}
+                  height={32}
                   className="h-8 w-8"
                 />
                 <div className="relative">
