@@ -33,8 +33,10 @@ const commandCategories = {
     { name: '?mysong', description: 'Show your current playing song on Last.fm (Aliases: ?ms)', usage: '?mysong' },
     { name: '?song', description: "Check another user's currently playing song", usage: '?song [username]' },
     { name: '?songhistory', description: 'Show a user\'s recently played songs', usage: '?songhistory [username]' },
+    { name: '?topalbums', description: 'Show top 5 albums from Last.fm (Aliases: ?tal)', usage: '?topalbums' },
     { name: '?topartists', description: 'Show top 5 artists from Last.fm (Aliases: ?ta)', usage: '?topartists' },
     { name: '?topsongs', description: 'Show top 5 songs from Last.fm (Aliases: ?ts)', usage: '?topsongs' },
+    { name: '?weekly', description: 'Show your weekly top 5 songs', usage: '?weekly' },
   ],
   "Info Commands": [
     { name: '?game', description: 'Get information about a game', usage: '?game [game]' },
@@ -44,6 +46,7 @@ const commandCategories = {
     { name: '?isbanned', description: 'Check if a user is banned from twitch and if so, get the reason (Aliases: ?bancheck, ?bc)', usage: '?isbanned [username]' },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
     { name: '?isstaff', description: 'Check if a user is a twitch staff member', usage: '?isstaff [username]' },
+    { name: '?logs', description: 'Get logs from a channel', usage: '?logs [username] [channel]' },
     { name: '?movie', description: 'Get information about a movie', usage: '?movie [title]' },
     { name: '?news', description: 'Get latest news', usage: '?news [query]' },
     { name: '?profilepicture', description: 'Get a user\'s profile picture (Aliases: ?pfp)', usage: '?profilepicture [username]' },
