@@ -27,6 +27,7 @@ const commandCategories = {
     { name: '?pyramid', description: 'Make a pyramid', usage: '?pyramid [text]' },
     { name: '?sigma', description: 'Get a random sigma quote', usage: '?sigma' },
     { name: '?smelly', description: 'Check how someone smells (Aliases: ?stinky, ?smell, ?stink)', usage: '?smelly [username]' },
+    { name:'?wisdom', description: 'Get a random wisdom quote', usage: '?wisdom'},
     { name: '?yourmom', description: 'Get a random your mom joke', usage: '?yourmom' },
   ],
   "Music Commands": [
