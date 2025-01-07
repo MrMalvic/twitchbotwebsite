@@ -11,6 +11,7 @@ import Image from 'next/image'
 const commandCategories = {
   "Fun Commands": [
     { name: '?8ball', description: 'Ask the magic 8ball a question', usage: '?8ball [question]' },
+    { name: '?aisearch', description: 'Search the web for information that will be summarized by AI (Aliases: ?ais)', usage: '?aisearch [query]' },
     { name: '?ask', description: 'Ask a question and get an AI response (Aliases: ?gpt)', usage: '?ask [question]' },
     { name: '?catfact', description: 'Get a random cat fact', usage: '?catfact' },
     { name: '?coinflip', description: 'Flip a coin (Aliases: ?cf)', usage: '?coinflip' },
