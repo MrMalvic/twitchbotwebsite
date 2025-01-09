@@ -7,13 +7,21 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { ChevronDown } from "lucide-react"
 import Image from 'next/image'
 
+interface Command {
+  name: string;
+  description: string;
+  usage: string;
+  optOutEnabled?: boolean;
+}
+
 // Organize commands by category
-const commandCategories = {
+const commandCategories: Record<string, Command[]> = {
   "Fun Commands": [
     { name: '?8ball', description: 'Ask the magic 8ball a question', usage: '?8ball [question]' },
     { name: '?aisearch', description: 'Search the web for information that will be summarized by AI (Aliases: ?ais)', usage: '?aisearch [query]' },
     { name: '?ask', description: 'Ask a question and get an AI response (Aliases: ?gpt)', usage: '?ask [question]' },
     { name: '?catfact', description: 'Get a random cat fact', usage: '?catfact' },
+    { name: '?chatsummary', description: 'Get a summary of the chat in the past 10 minutes (Aliases: ?cs)', usage: '?chatsummary' },
     { name: '?coinflip', description: 'Flip a coin (Aliases: ?cf)', usage: '?coinflip' },
     { name: '?cookie', description: 'Get your daily fortune cookie', usage: '?cookie' },
     { name: '?dadjoke', description: 'Get a random dad joke', usage: '?dadjoke' },
@@ -49,8 +57,8 @@ const commandCategories = {
     { name: '?horoscope', description: 'Get your horoscope', usage: '?horoscope [sign]' },
     { name: '?isbanned', description: 'Check if a user is banned from twitch and if so, get the reason (Aliases: ?bancheck, ?bc)', usage: '?isbanned [username]' },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
-    { name: '?isstaff', description: 'Check if a user is a twitch staff member', usage: '?isstaff [username]' },
-    { name: '?logs', description: 'Get logs from a channel', usage: '?logs [username] [channel]' },
+    { name: '?isstaff', description: 'Check if a user is a twitch staff member', usage: '?isstaff [username]'},
+    { name: '?logs', description: 'Get a user\'s logs from a specified channel', usage: '?logs [username] [channel]', optOutEnabled: true },
     { name: '?movie', description: 'Get information about a movie', usage: '?movie [title]' },
     { name: '?news', description: 'Get latest news', usage: '?news [query]' },
     { name: '?profilepicture', description: 'Get a user\'s profile picture (Aliases: ?pfp)', usage: '?profilepicture [username]' },
@@ -63,12 +71,15 @@ const commandCategories = {
     { name: '?7tva', description: 'Shows the age of a 7TV account', usage: '?7tva [username]' },
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
-    { name: '?check', description: 'Check a user\'s afk status', usage: '?check [username]' },
+    { name: '?check', description: 'Check a user\'s afk status', usage: '?check [username]', optOutEnabled: true },
     { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
-    { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]' },
+
+    { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]', optOutEnabled: true },
     { name: '?randomclip', description: 'Get a random clip from a channel', usage: '?randomclip [channel]' },
-    { name: '?randomline', description: 'Get a random message from a user (Aliases: ?rl)', usage: '?randomline [username] [channel]' },
+    { name: '?randomline', description: 'Get a random message from a user (Aliases: ?rl)', usage: '?randomline [username] [channel]', optOutEnabled: true },
     { name: '?randomquote', description: 'Get a random message from chat (Aliases: ?rq)', usage: '?randomquote [channel]' },
+    { name: '?remind', description: 'Set a reminder for a user', usage: '?remind [username] [message]', optOutEnabled: true },
+    { name: '?remindme', description: 'Set a reminder for yourself', usage: '?remindme [duration] [message]' },
     { name: '?subage', description: 'Check subscription length', usage: '?subage [username] [channel]' },
     { name: '?user', description: 'Get Twitch user information', usage: '?user [username]' },
     { name: '?whatemoteisit', description: 'Get information about an emote (Aliases: ?weit)', usage: '?whatemoteisit [emote]' },
@@ -76,6 +87,8 @@ const commandCategories = {
   "System Commands": [
     { name: '?ping', description: 'Check bot status and response time', usage: '?ping' },
     { name: '?help', description: 'Show available commands', usage: '?help' },
+    { name: '?optout', description: 'Opt out of the specified command (Must have opt-out enabled tag)', usage: '?optout [command]' },
+    { name: '?optin', description: 'Opt in to the specified command (Must have opt-out enabled tag)', usage: '?optin [command]' },
   ],
 };
 
@@ -179,7 +192,14 @@ export function BlockPage() {
               {commands.map((command) => (
                 <Card key={command.name}>
                   <CardHeader>
-                    <CardTitle>{command.name}</CardTitle>
+                    <div className="flex items-center justify-between">
+                      <CardTitle>{command.name}</CardTitle>
+                      {command.optOutEnabled && (
+                        <span className="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:text-blue-200">
+                          Opt-out enabled
+                        </span>
+                      )}
+                    </div>
                     <CardDescription>{command.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
