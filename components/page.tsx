@@ -73,7 +73,6 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
     { name: '?checkafk', description: 'Check a user\'s afk status (Aliases: ?ca)', usage: '?checkafk [username]', optOutEnabled: true },
     { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
-
     { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]', optOutEnabled: true },
     { name: '?randomclip', description: 'Get a random clip from a channel', usage: '?randomclip [channel]' },
     { name: '?randomline', description: 'Get a random message from a user (Aliases: ?rl)', usage: '?randomline [username] [channel]', optOutEnabled: true },
@@ -81,6 +80,7 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?remind', description: 'Set a reminder for a user', usage: '?remind [username] [message]', optOutEnabled: true },
     { name: '?remindme', description: 'Set a reminder for yourself', usage: '?remindme [duration] [message]' },
     { name: '?subage', description: 'Check subscription length', usage: '?subage [username] [channel]' },
+    { name: '?tuck',description: 'Tuck a user in bed with a sweet message', usage: '?tuck [username]' },
     { name: '?user', description: 'Get Twitch user information', usage: '?user [username]' },
     { name: '?whatemoteisit', description: 'Get information about an emote (Aliases: ?weit)', usage: '?whatemoteisit [emote]' },
   ],
