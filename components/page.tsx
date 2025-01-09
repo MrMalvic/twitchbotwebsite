@@ -71,7 +71,7 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?7tva', description: 'Shows the age of a 7TV account', usage: '?7tva [username]' },
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
-    { name: '?check', description: 'Check a user\'s afk status', usage: '?check [username]', optOutEnabled: true },
+    { name: '?checkafk', description: 'Check a user\'s afk status (Aliases: ?ca)', usage: '?checkafk [username]', optOutEnabled: true },
     { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
 
     { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]', optOutEnabled: true },
