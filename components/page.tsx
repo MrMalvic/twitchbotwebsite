@@ -72,7 +72,7 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?accage', description: 'Shows the age of a Twitch account', usage: '?accage [username]' },
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
     { name: '?checkafk', description: 'Check a user\'s afk status (Aliases: ?ca)', usage: '?checkafk [username]', optOutEnabled: true },
-    { name: '?countlines', description: 'Check a user\'s message count in a channel (Aliases: ?cl)', usage: '?countlines [username] [channel]', optOutEnabled: true },
+    { name: '?countlines', description: 'Check a user\'s message count in a channel (Aliases: ?cl)', usage: '?countlines [username] [channel]' },
     { name: '?followage', description: 'Check follow age of a user (Aliases: ?fa)', usage: '?followage [username] [channel]' },
     { name: '?namechange', description: 'Check a user\'s name change history', usage: '?namechange [username]', optOutEnabled: true },
     { name: '?randomclip', description: 'Get a random clip from a channel', usage: '?randomclip [channel]' },
