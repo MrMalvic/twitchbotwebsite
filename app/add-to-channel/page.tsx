@@ -7,6 +7,8 @@ export default function UnderDevelopmentPage() {
         <Image
           src="/construction.webp"
           alt="Construction"
+          width={160}
+          height={96}
           className="h-24 w-40 mx-auto mb-6"
         />
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
