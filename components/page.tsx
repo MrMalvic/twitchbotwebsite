@@ -82,7 +82,7 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
     { name: '?checkafk', description: 'Check a user\'s afk status (Aliases: ?ca)', usage: '?checkafk [username]', optOutEnabled: true },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
-    { name: '?remind', description: 'Set a reminder for a user', usage: '?remind [username] [message]', optOutEnabled: true },
+    { name: '?remind', description: 'Set a reminder for a user. To delete a reminder, use ?delreminder|?delremind {6-digit-id}', usage: '?remind [username] [message]', optOutEnabled: true },
     { name: '?remindme', description: 'Set a reminder for yourself', usage: '?remindme [duration] [message]' },
     { name: '?time', description: 'Check time in a location', usage: '?time [location]' },
     { name: '?weather', description: 'Get weather information, You can also set your location with ?weather set [location]. you can also add "hidden" at the end to hide the location from the output', usage: '?weather [location]' },
