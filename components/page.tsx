@@ -101,10 +101,11 @@ export function BlockPage() {
   
   // Create refs for each category section
   const categoryRefs = {
-    "Fun Commands": useRef<HTMLDivElement>(null),
-    "Music Commands": useRef<HTMLDivElement>(null),
-    "Info Commands": useRef<HTMLDivElement>(null),
-    "Chat Commands": useRef<HTMLDivElement>(null),
+    "Fun & Entertainment": useRef<HTMLDivElement>(null),
+    "Chat & User Info": useRef<HTMLDivElement>(null),
+    "Information & Search": useRef<HTMLDivElement>(null),
+    "Music & Last.fm": useRef<HTMLDivElement>(null),
+    "Utility Commands": useRef<HTMLDivElement>(null),
     "System Commands": useRef<HTMLDivElement>(null),
   }
 
