@@ -30,6 +30,7 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?gif', description: 'Get a random gif', usage: '?gif [query]' },
     { name: '?hi', description: 'Greet a random user in chat', usage: '?hi' },
     { name: '?imagine', description: 'Generate an image with AI (Aliases: ?img)', usage: '?imagine [prompt]' },
+    { name: '?joke', description: 'Get a random joke', usage: '?joke' },
     { name: '?love', description: 'Check love compatibility between two users', usage: '?love [user1] [user2]' },
     { name: '?merp', description: 'Get a random merp streamable link', usage: '?merp' },
     { name: '?pyramid', description: 'Make a pyramid', usage: '?pyramid [text]' },
@@ -79,7 +80,7 @@ const commandCategories: Record<string, Command[]> = {
     { name: '?weekly', description: 'Show your weekly top 5 songs', usage: '?weekly' },
   ],
   "Utility Commands": [  
-    { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop)', usage: '?afk [message]' },
+    { name: '?afk', description: 'Set your AFK status. (Aliases: ?work, ?sleep, ?food, ?lurk, ?gaming, ?gn/?sleep, ?nap, ?poop, ?study)', usage: '?afk [message]' },
     { name: '?checkafk', description: 'Check a user\'s afk status (Aliases: ?ca)', usage: '?checkafk [username]', optOutEnabled: true },
     { name: '?isdown', description: 'Check if a website is down', usage: '?isdown [url]' },
     { name: '?remind', description: 'Set a reminder for a user. To delete a reminder, use ?delreminder|?delremind {6-digit-id}', usage: '?remind [username] [message]', optOutEnabled: true },
